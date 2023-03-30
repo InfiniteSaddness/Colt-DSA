@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Few Good Patterns</title>
+</head>
+<body>
+  <h1>A Few Good Patterns</h1>  
+
+  <script>
+    // charCount
+    /*
+      version 1: only register lowercase letters and numbers.
+        query: Wouldn't lowercasing the string be better?
+             > Probably talking less than microseconds unless parsing a novel.
+        query: Do we need to capture uppercase letters as well?
+             > Write a seperate function for that. Consider paramater switching
+             > as a last resort to shrink codebase. 
+             > Single Concern, Single Function is better.
+        query: Superfluous, but isn't binary testing faster than a regex setup?
+             > This is the topic of the next 78 seconds of video or so.
+             >query: Why did you waste time with that last one, or this one?
+               /> Because I am an odd duck, and talking to myself is a hard to break habit. 
+               /> Because sometimes details are found in this 'useless' process that otherwise go unnoticed.
+               /> Because when those sometimes happen, I have found that I may not actually be solving the right problem.
+             > ... Shaky ground. But you don't answer to the realm of man, so neener neener
+        > How fun was that?
+     */
+
+     /*
+       version 2: To address the above mentioned SCSF principle
+       charCount(str, lower), isAlphaNumeric(c)
+       Adding the upper/lower toggle, default -> lower
+      */
+
+      
+    function isAlphaNumeric(c){
+      ch = c.charCodeAt(0);
+        if(!(ch > 47 && ch < 58) && 
+           !(ch > 64 && ch < 91) && // Go ahead and test for uppercase here, as it is valid to do so
+           !(ch > 96 && ch < 123)){
+           return false;
+          }
+        return true;
+    }
+
+    function charCount(str, lower=true){
+      let obj = {}
+      for(let c of str){
+        if(isAlphaNumeric(c)){
+          if(lower) c = c.toLowerCase(); // edit to lower here, as needed
+          obj[c] = ++obj[c] || 1;
+        } 
+      }
+
+      /* v-1
+      for(let ch of str){
+        ch = ch.toLowerCase();
+        // if(/[a-z0-9]/.test(ch)) obj[ch] = ++obj[ch] || 1;   
+      }
+      */
+      return obj
+    }
+
+    console.log(charCount("Testing a function written by Colt! { Pretty Handy! }", false));
+
+  </script>
+</body>
+</html>
