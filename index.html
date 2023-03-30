@@ -10,8 +10,29 @@
   <h1>A Few Good Patterns</h1>  
 
   <section>
-    <h2>Frequency Counter</h2>
-
+    <h2>Multiple Pointers</h2>
+    <p>This will be handy on a case by case basis, so just be aware of the strategy.</p>
+    <p>The concept is to eliminate an O(n^2) nested loop brute force operation, <br> 
+    by using <em>Multiple Pointers</em>.</p>
+    <p>What you do, should your solution space warrant it, is to set a 
+      pointer, usually to the front, and a second at the end fo an array, 
+      <em>Linked list, collection...</em>
+      and then do your calculations to single in on your target. 
+    </p>
+    <p>That seems like a very obscure definition. <br>
+     When the opportunity arises, we will revist with a real world example.
+    </p>
+    <p><strong>LeetCodeSession 3-29-23</strong><br>
+     the goal was to find a maximum area between two bars on a graph. 
+     This is a good example, although I can't imagine where it would be handy...
+    </p>
+  </section>
+  <section>
+    <h2>Sliding Window</h2>
+    <p>
+      Technically another Multiple Pointers pattern, but focused on a contiguous range rather than 
+      a shrinking set.. [?] Does that even make sense? 
+    </p>
   </section>
 
   <script>
