@@ -9,6 +9,11 @@
 <body>
   <h1>A Few Good Patterns</h1>  
 
+  <section>
+    <h2>Frequency Counter</h2>
+
+  </section>
+
   <script>
       
     function isAlphaNumeric(ch){
@@ -29,6 +34,45 @@
       return obj
     }
 
+function freq(arr){
+  let obj = {}
+  for(let item of arr){
+     obj[item] = ++obj[item] || 1;
+    } 
+    return obj
+}
+
+// Useful for numbers, or letters... 
+// Needs expansion for general use.
+
+// the Transformation callback [ tx ] is 
+// availible for comparison of two arrays
+// with a mutation test. See Example Below.
+function sameFrequency(arr1, arr2, tx=(v)=>v){
+  if(arr1.length != arr2.length) return false;
+
+  let obj1 = freq(arr1);
+  let obj2 = freq(arr2);
+
+  for(let u in obj1){
+    if(!(obj1[u] == obj2[tx(u)])){
+      return false;
+    }
+  }
+  return true;
+}
+
+ console.log(sameFrequency([1, 2, 3, 4], [1, 2, 3])); // false
+ console.log(sameFrequency([1, 2, 3, 4], [1, 2, 3, 4])); // true
+
+ // congruency: a is like b given b == a*a
+ console.log(sameFrequency([1, 2, 3, 4],  
+                           [1, 4, 9, 16], 
+                           v=>v*v)); // true
+ console.log(sameFrequency([1, 2, 3, 4],  
+                           [1, 4, 9, 25], 
+                           v=>v*v)); // false
+ 
   </script>
 </body>
 </html>
