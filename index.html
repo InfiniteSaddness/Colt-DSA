@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Big-O</title>
+</head>
+<body>
+
+  <h1>Big-O</h1>
+  <p>
+    There isn't really much to say about Big-O. <br> 
+    Yes, the full process of amortization for clock cycles could be covered, <br>
+    But the entire point of the nomenclature is to avoid all that heady lifting. <br> 
+    Unless of course, you are trying to go off rez and need to proof your solutions. <br>
+    <hr> 
+    The goal is to be efficient. <br>
+    Less time spent. Less space used. <br>
+    As with all things, tradeoffs will happen. <br> 
+    But in general, from best to worst, <br> 
+    We aim for space or time complexity of: 
+  </p>
+
+  <ol>
+    <li>O(1) <em>Constant</em> Algorithms of this such take the same amount of time, usually quite small, regardless of the number of inputs.</li>
+    <li>O(log n) <em>Logarithmic</em> Grows, but very slowly, with the number of inputs.</li>
+    <li>O(n) <em>Linear</em> Grows in size at the same rate of input growth</li>
+    <li>O(n log n) <em>nlogn</em> Grows very fast</li>
+    <li>O(n^2) <em>Quadratic</em> Grows very very fast. <strong>Rule of Thumb:</strong> nested loops almost always land here...</li>
+    <li>O(n^3) And things only get worse from here.</li>
+  </ol>
+  
+  <h2>javaScript Object Analysis</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Big-O</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Insertion</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Removal</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>Search</td>
+          <td>n <em>usually</em></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      We won't be kyping any more of the base content, although the code base will be earily similar. <br> 
+      Let's face it, even though there are plenty of ways to skin a cat, only a few leave enough meat for a stir fry.
+    </p>
+
+    <h2>Problem Solving:</h2>
+    <p>Pretty common sense stuff here too.</p>
+    <ol>
+      <li>Make sure you understand the problem. <em title="Yeah... but who determines what the right question is?">The perfect answer to the wrong question has little marketable value.</em></li>
+      <li>Find a concrete example. <em>Nothing comes from Nothing. Relate or Locate an example to enhance understanding</em></li>
+      <li>Break It Down. <em>Make note of your path</em></li>
+      <li>Code! <em>Or continue breaking it down if you can't figure out a bit</em></li>
+      <li>Optimize. <em>Yes, this is a final, and often optional, step. Having something that works is more useful than having nothing.</em></li>
+    </ol>
+</body>
+</html>
